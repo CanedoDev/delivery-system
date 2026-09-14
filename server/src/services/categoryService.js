@@ -40,3 +40,41 @@ export const createCategory = async (name) => {
 
     return newCategory
 };
+
+export const deleteCategory = async (id) => {
+
+    const deletedCategory = await prisma.category.delete({
+        where: {
+            id
+        }
+    });
+
+    return deletedCategory;
+
+};
+
+export const switchActivationCategory = async (id, active) => {
+
+    const category = await prisma.category.findUnique({
+        where:{id}
+    });
+
+    if(!category){
+        throw new Error('categoria nao encontrada');
+    }
+
+    const updatedCategory = await prisma.category.update({
+        where: { id },
+        data: { active: !category.active }
+    });
+    return updatedCategory;
+};
+
+export const editCategory = async (id, name) => {
+    const editedCategory = await prisma.category.update({
+        where: { id },
+        data: { name }
+    });
+
+    return editedCategory;
+};

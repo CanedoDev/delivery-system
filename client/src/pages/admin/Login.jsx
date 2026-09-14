@@ -92,7 +92,7 @@ function Login({ btnText }) {
                 value={user.password}
                 handleOnChange={handleChange}
             />
-            <Button text={btnText} loading={loading} />
+            <Button text={btnText} loading={loading} type="submit" />
         </form>
     );
 }

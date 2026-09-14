@@ -3,7 +3,7 @@ import Sidebar from '../admin/Sidebar.jsx';
 
 export default function AdminLayout({ children, title = 'Painel Admin' }) {
     return (
-        <div className="min-h-screen bg-gray-50 flex flex-col">
+        <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-purple-500 selection:text-white">
             {/* Cabeçalho do Admin */}
             <AdminHeader title={title} />
 

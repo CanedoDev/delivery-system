@@ -1,17 +1,26 @@
 import api from './api.js';
 
 export const getCategoriesService = async () => {
-    // Faz a chamada HTTP para o backend
     const response = await api.get('/categories');
-
-    // Retorna os dados que vieram do servidor: { message, token, user }
     return response.data;
 };
 
-export const createCategoriesService = async (name, description) => {
-    // Faz a chamada HTTP para o backend
-    const response = await api.post('/categories', { name, description });
+export const createCategoriesService = async (name) => {
+    const response = await api.post('/categories', { name });
+    return response.data;
+};
 
-    // Retorna os dados que vieram do servidor: { message, token, user }
+export const editCategoriesService = async (id, name) => {
+    const response = await api.put(`/categories/${id}`, { name });
+    return response.data;
+};
+
+export const deleteCategoriesService = async (id) => {
+    const response = await api.delete(`/categories/${id}`);
+    return response.data;
+};
+
+export const switchCategoriesService = async (id) => {
+    const response = await api.patch(`/categories/${id}/toggle`);
     return response.data;
 };

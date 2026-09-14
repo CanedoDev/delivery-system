@@ -5,7 +5,7 @@ function EmptyState({
   action
 }) {
   return (
-    <div className="flex flex-col items-center justify-center p-12 text-center bg-white rounded-xl border border-dashed border-slate-300 my-5">
+    <div className="flex flex-col items-center justify-center p-12 text-center bg-slate-900 rounded-xl border border-dashed border-slate-800 my-5 text-slate-100">
       {iconUrl && (
         <img 
           src={iconUrl} 
@@ -14,11 +14,11 @@ function EmptyState({
         />
       )}
 
-      <h3 className="text-lg font-bold text-slate-800 mb-1.5">
+      <h3 className="text-lg font-bold text-slate-100 mb-1.5">
         {title}
       </h3>
       
-      <p className="text-sm text-slate-500 max-w-sm mb-0">
+      <p className="text-sm text-slate-400 max-w-sm mb-0">
         {message}
       </p>
 
